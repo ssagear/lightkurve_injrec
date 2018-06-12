@@ -7,12 +7,10 @@ Some lightkurve project ideas
 
 
 Injection and Recovery classes
-###########################################################
+
 
 Notes:
 
 AGN, random walk signals? pulsations - asteroseismic?
 
 appaloosa: modeling, injection and recovery (?) of flares
-
-###########################################################
