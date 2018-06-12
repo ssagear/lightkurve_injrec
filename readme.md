@@ -5,8 +5,8 @@ Some lightkurve project ideas
 1) adding an injection and recovery class to lightkurve
 
 
-## Injection and Recovery classes
 
+Injection and Recovery classes
 ###########################################################
 
 Notes:
