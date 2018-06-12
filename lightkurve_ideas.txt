@@ -1,12 +1,18 @@
-Injection and Recovery classes
+## Injection and Recovery classes
 notes
 
+PUT ON GITHUB
+put a link to atom file in general
+
 lightkurve.injrec.Injection(object)
+lightcurve.invert? inverts lightcurve to make sure there
+are no planetary transits
 
 Methods
 (for K2 data)
 
-in all methods: set a default zero point to 0.0
+in all methods: set a default zero point to 1.0
+merged lightcurves are defined as the composite signal-free data plus synthetic lightcurve
 
 supernova(K2flux, K2time,  model, amplitude=default, duration=default, shockbreakout=False)
   injects a supernova light curve into K2 light curve
@@ -19,7 +25,7 @@ supernova(K2flux, K2time,  model, amplitude=default, duration=default, shockbrea
   **note: number of params depends on the model**
   returns: time, flux of merged light curve
 
-transit(K2flux, K2time, period, Rp/Rs, T0, impact=0, eccentricity=0, K2 lc)
+planet(K2flux, K2time, period, Rp/Rs, T0, impact=0, eccentricity=0)
   injects a planetary transit into K2 light curve
   parameters:  0) K2 lc flux and time: array-like
                1) orbital period (days): float
@@ -47,16 +53,14 @@ flare(params, K2 lc)
                3) duration (days): float
   returns: time, flux of merged light curve
 
+appaloosa: modeling, injection and recovery (?) of flares
+
 plot_merged_lc(time, mergedflux)
   plots the merged light curve
   parameters: 1) time: array-like
               2) flux: array-like
   returns: matplotlib axis object
 
-yoohoo
-yoohoohoo
-dkjfsldkfj
-yoohoohooho
-lsdfjko
+
 
 lightkurve.injrec.Fitting(object)
