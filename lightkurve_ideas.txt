@@ -19,7 +19,7 @@ in all methods: set a default zero point to 1.0
 merged lightcurves are defined as the composite signal-free data plus synthetic lightcurve.
 
 
-1. supernova(K2flux, K2time,  model, amplitude=default, duration=default, shockbreakout=False)
+1. inject_supernova(K2flux, K2time,  model, amplitude=default, duration=default, shockbreakout=False)
   injects a supernova light curve into K2 light curve
   parameters:  0) K2 lc flux and time: array-like
                1) model type: string (set default)
@@ -32,7 +32,7 @@ merged lightcurves are defined as the composite signal-free data plus synthetic 
 
 
 
-2. planet(K2flux, K2time, period, Rp/Rs, T0, impact=0, eccentricity=0)
+2. inject_planet(K2flux, K2time, period, Rp/Rs, T0, impact=0, eccentricity=0)
   injects a planetary transit into K2 light curve
   parameters:  0) K2 lc flux and time: array-like
                1) orbital period (days): float
@@ -46,7 +46,7 @@ merged lightcurves are defined as the composite signal-free data plus synthetic 
 
 
 
-3. rotation(K2flux, K2time, amplitude, frequency, phase=0)
+3. inject_rotation(K2flux, K2time, amplitude, frequency, phase=0)
   injects a sinusoidal starspot rotation light curve
   parameters:  0) K2 lc flux and time: array-like
                1) amplitude (size of spot) (percent): float
@@ -56,7 +56,7 @@ merged lightcurves are defined as the composite signal-free data plus synthetic 
 
 
 
-4. flare(params, K2 lc)
+4. inject_flare(K2flux, K2time, amplitude, dropoffrate, duration)
   injects a stellar flare
   parameters:  0) K2 lc flux and time: array-like
                1) amplitude (percent): float
@@ -75,3 +75,26 @@ merged lightcurves are defined as the composite signal-free data plus synthetic 
 
 
 lightkurve.injrec.Fitting(object)
+
+[WIP]################
+1. supernova_"BLS"(arguments)
+   some approximation for supernova fitting similar to BLS
+
+2. supernova_MCMC(time, mergedflux, starting_amplitude, starting_duration, ndim = 2, nwalkers=100)
+   runs MCMC on merged light curve to fit inject_supernova
+   parameters: 1) K2 time and merged flux: array-like
+               2) starting_amplitude (percent): float
+               3) starting_duration (days): float
+                  guesses to begin MCMC
+               4) ndim (number of dimensions) (depends on the model): int
+               5) nwalkers (number of walkers): int
+               ***need callable lnprob that takes a vector in parameter space and returns
+                  ln(posterior probability)
+
+3. planet_BLS(args)
+
+4. planet_MCMC
+
+5.
+
+#####################
