@@ -1,8 +1,0 @@
-What have I done?
-  Learned about MCMC
-  Learned more about sncosmo and how to create and inject a supernova model
-  Written "documentation" for a class that injects SN, planets, flares, rotation
-
-Problems:
-  Would be helpful to go over this documentation with someone to decide what
-  lightkurve needs

@@ -4,9 +4,15 @@ notes
 PUT ON GITHUB
 put a link to atom file in general
 
+AGN, random walk signals? pulsations - astroseismic?
+
 lightkurve.injrec.Injection(object)
 lightcurve.invert? inverts lightcurve to make sure there
 are no planetary transits
+
+clone goldenrod repo, explore, run jupyter notebooks
+
+make an issue - develop use case driven development
 
 Methods
 (for K2 data)
