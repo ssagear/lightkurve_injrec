@@ -1,0 +1,24 @@
+lightkurve.injrec.Fitting(object)
+
+[WIP]################
+1. supernova_"BLS"(arguments)
+   some approximation for supernova fitting similar to BLS
+
+2. supernova_MCMC(time, mergedflux, starting_amplitude, starting_duration, ndim = 2, nwalkers=100)
+   runs MCMC on merged light curve to fit inject_supernova
+   parameters: 1) K2 time and merged flux: array-like
+               2) starting_amplitude (percent): float
+               3) starting_duration (days): float
+                  guesses to begin MCMC
+               4) ndim (number of dimensions) (depends on the model): int
+               5) nwalkers (number of walkers): int
+               ***need callable lnprob that takes a vector in parameter space and returns
+                  ln(posterior probability)
+
+3. planet_BLS(args)
+
+4. planet_MCMC
+
+5.
+
+#####################
