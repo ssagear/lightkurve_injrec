@@ -30,6 +30,8 @@ merged lightcurves are defined as the composite signal-free data plus synthetic 
   **note: number of params depends on the model**
   returns: time, flux of merged light curve
 
+
+
 2. planet(K2flux, K2time, period, Rp/Rs, T0, impact=0, eccentricity=0)
   injects a planetary transit into K2 light curve
   parameters:  0) K2 lc flux and time: array-like
@@ -42,6 +44,8 @@ merged lightcurves are defined as the composite signal-free data plus synthetic 
                6) transit mid-time: float
   returns: time, flux of merged light curve
 
+
+
 3. rotation(K2flux, K2time, amplitude, frequency, phase=0)
   injects a sinusoidal starspot rotation light curve
   parameters:  0) K2 lc flux and time: array-like
@@ -50,6 +54,8 @@ merged lightcurves are defined as the composite signal-free data plus synthetic 
                3) phase (starting point)(set default): float
   returns: time, flux of merged light curve
 
+
+
 4. flare(params, K2 lc)
   injects a stellar flare
   parameters:  0) K2 lc flux and time: array-like
@@ -57,6 +63,8 @@ merged lightcurves are defined as the composite signal-free data plus synthetic 
                2) drop off rate (? how to define this?) (percent/days): float
                3) duration (days): float
   returns: time, flux of merged light curve
+
+
 
 5. plot_merged_lc(time, mergedflux)
   plots the merged light curve
