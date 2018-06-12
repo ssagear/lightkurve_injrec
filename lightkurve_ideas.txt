@@ -1,26 +1,25 @@
 ## Injection and Recovery classes
-notes
 
-PUT ON GITHUB
-put a link to atom file in general
+###########################################################
+
+Notes:
 
 AGN, random walk signals? pulsations - astroseismic?
 
+appaloosa: modeling, injection and recovery (?) of flares
+
+###########################################################
+
 lightkurve.injrec.Injection(object)
-lightcurve.invert? inverts lightcurve to make sure there
-are no planetary transits
-
-clone goldenrod repo, explore, run jupyter notebooks
-
-make an issue - develop use case driven development
 
 Methods
 (for K2 data)
 
 in all methods: set a default zero point to 1.0
-merged lightcurves are defined as the composite signal-free data plus synthetic lightcurve
+merged lightcurves are defined as the composite signal-free data plus synthetic lightcurve.
 
-supernova(K2flux, K2time,  model, amplitude=default, duration=default, shockbreakout=False)
+
+1. supernova(K2flux, K2time,  model, amplitude=default, duration=default, shockbreakout=False)
   injects a supernova light curve into K2 light curve
   parameters:  0) K2 lc flux and time: array-like
                1) model type: string (set default)
@@ -31,7 +30,7 @@ supernova(K2flux, K2time,  model, amplitude=default, duration=default, shockbrea
   **note: number of params depends on the model**
   returns: time, flux of merged light curve
 
-planet(K2flux, K2time, period, Rp/Rs, T0, impact=0, eccentricity=0)
+2. planet(K2flux, K2time, period, Rp/Rs, T0, impact=0, eccentricity=0)
   injects a planetary transit into K2 light curve
   parameters:  0) K2 lc flux and time: array-like
                1) orbital period (days): float
@@ -43,7 +42,7 @@ planet(K2flux, K2time, period, Rp/Rs, T0, impact=0, eccentricity=0)
                6) transit mid-time: float
   returns: time, flux of merged light curve
 
-rotation(K2flux, K2time, amplitude, frequency, phase=0)
+3. rotation(K2flux, K2time, amplitude, frequency, phase=0)
   injects a sinusoidal starspot rotation light curve
   parameters:  0) K2 lc flux and time: array-like
                1) amplitude (size of spot) (percent): float
@@ -51,7 +50,7 @@ rotation(K2flux, K2time, amplitude, frequency, phase=0)
                3) phase (starting point)(set default): float
   returns: time, flux of merged light curve
 
-flare(params, K2 lc)
+4. flare(params, K2 lc)
   injects a stellar flare
   parameters:  0) K2 lc flux and time: array-like
                1) amplitude (percent): float
@@ -59,9 +58,7 @@ flare(params, K2 lc)
                3) duration (days): float
   returns: time, flux of merged light curve
 
-appaloosa: modeling, injection and recovery (?) of flares
-
-plot_merged_lc(time, mergedflux)
+5. plot_merged_lc(time, mergedflux)
   plots the merged light curve
   parameters: 1) time: array-like
               2) flux: array-like
