@@ -56,6 +56,6 @@ plot_merged_lc(time, mergedflux)
 yoohoo
 yoohoohoo
 dkjfsldkfj
-
+yoohoohoohoo
 
 lightkurve.injrec.Fitting(object)
