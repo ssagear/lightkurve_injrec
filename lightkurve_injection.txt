@@ -7,16 +7,28 @@ in all methods: set a default zero point to 1.0
 merged lightcurves are defined as the composite signal-free data plus synthetic lightcurve.
 
 
-1. inject_supernova(K2flux, K2time,  model, amplitude=default, duration=default, shockbreakout=False)
+1. inject_supernova(K2flux, K2time,  model, z=default, T0=default, amplitude=default, *duration=default*, *shockbreakout=False*)
   injects a supernova light curve into K2 light curve
   parameters:  0) K2 lc flux and time: array-like
                1) model type: string (set default)
                2) specify:
                   a) amplitude: float
-                  b) duration (days): float
+                  b) z redshift: float
+                  c) T0: float
+                  b) duration (days): float (???)
                   c) shock breakout?: bool
   **note: number of params depends on the model**
   returns: time, flux of merged light curve
+
+  using sncosmo:
+  model = sncosmo.Model(source=source)
+  model.set(z=z, T0=T0, amplitude=amplitude)
+  bandflux = model.bandflux('desr', time, zp=25, zpsys='ab')
+  ###
+  flux = model.flux(time, [4000., 4100., 4200.]) #that list is wavelength
+  #K2time, flux is the merged light curve
+
+
 
 
 
@@ -32,6 +44,11 @@ merged lightcurves are defined as the composite signal-free data plus synthetic 
                6) transit mid-time: float
   returns: time, flux of merged light curve
 
+  using ktransit:
+  model = ktransit.LCModel()
+  model.add_star(rho=1.5, ld1=0.2, ld2=0.4, ld3=0.0, ld4=0.0, dil=0.0, zpt=0.0)
+  model.add_planet(T0=T0, period=period, impact=impact, rprs=Rp/Rs,
+        ecosw=0.0,  esinw=0.0, occ=0.0)
 
 
 3. inject_rotation(K2flux, K2time, amplitude, frequency, phase=0)
